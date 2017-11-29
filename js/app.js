@@ -79,9 +79,25 @@ for (var i = 0; i < data.AQP['2016-2'].ratings.length ; i++ ){
 console.log(totalDetractorsAQP/4)
 
 //La cantidad y el porcentaje que representa el total de estudiantes que superan la meta de puntos técnicos en promedio y por sprint.
-
+var sprintTech1 = 0
+var sprintTech2 = 0
+var sprintTech3 = 0
+var sprintTech4 = 0
 for (var i = 0; i < data.AQP['2016-2'].students.length ; i++ ){
     for (var j = 0; j < data.AQP['2016-2'].students[i].sprints.length ; j++ ){
-            var stuScoreTech=data.AQP['2016-2'].students[i].sprints[j].score.tech
-           console.log(stuScoreTech)
-    }}
+            var stuScoreTech=data.AQP['2016-2'].students[i].sprints[j].score.tech;
+            var sprintNumber = data.AQP['2016-2'].students[i].sprints[j].number;
+            if(sprintNumber == 1 && stuScoreTech >=1260) {
+                 sprintTech1 + 1
+           } else if (sprintNumber ==2 && stuScoreTech >=1260){
+                 sprintTech2 +1
+           } else if (sprintNumber == 3 && stuScoreTech >=1260){
+                 sprintTech3 +1
+           } else if (sprintNumber == 4 && stuScoreTech >=1260){
+            sprintTech4 +1 }
+}}
+console.log(sprintTech1)
+console.log(sprintTech2)
+console.log(sprintTech3)
+console.log(sprintTech4)
+console.log(data.AQP['2016-2'].students[0].sprints[0].number)
