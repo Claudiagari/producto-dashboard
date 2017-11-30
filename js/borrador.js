@@ -1,3 +1,12 @@
+// Viendo la data en la consola
+console.log(data)
+console.log(data.AQP)
+console.log(data.AQP['2016-2']);
+console.log(data.AQP['2016-2'].students);
+console.log(data.AQP['2016-2'].students[0]);
+console.log(data.AQP['2016-2'].students[0].active);
+console.log(data.AQP['2016-2'].students[0].sprints[0])
+console.log(data.AQP['2016-2'].students[0].sprints[0].score.tech)
 /*
  * Funcionalidad de tu producto
  */
@@ -5,165 +14,6 @@
 // Total de estudiantes 
 // El total de estudiantes presentes por sede y generación.
 // El porcentaje de deserción de estudiantes.
-var studentsAqp20162UP = 0;
-var studentsAqp20162Down = 0;
-for (var i = 0; i < data.AQP['2016-2'].students.length ; i++ ) {
-  var studentsTotal = data.AQP['2016-2'].students[i].active;
-  if (studentsTotal === true) {
-    studentsAqp20162UP += 1;
-  } else if (studentsTotal === false) {
-    studentsAqp20162Down += 1;
-  }
-}
-studentsAqp20162UP;
-studentsAqp20162Down;
-var totalstudentsAqp20162 = studentsAqp20162UP + studentsAqp20162Down;
-var detractorsAqp20162 = (studentsAqp20162Down / totalstudentsAqp20162) * 100;
-detractorsAqp20162 = detractorsAqp20162.toFixed(2);
-console.log(totalstudentsAqp20162);/* para la data */ 
-console.log(detractorsAqp20162);/* para la data */ 
-
-// obteniendo score mayor 70%
-// La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
-var SumScoreSprintHseAqp20162 = 0;
-var SumScoreSprintTechAqp20162 = 0;
-var stuContar = 0;
-for (var i = 0; i < data.AQP['2016-2'].students.length ; i++) {
-  for (var j = 0; j < data.AQP['2016-2'].students[i].sprints.length ; j++) {
-    var stuScoreHse = data.AQP['2016-2'].students[i].sprints[j].score.hse;
-    var stuScoreTech =data.AQP['2016-2'].students[i].sprints[j].score.tech;
-    SumScoreSprintHseAqp20162 += stuScoreHse;
-    SumScoreSprintTechAqp20162 += stuScoreTech;
-  } if (SumScoreSprintHseAqp20162 >= 3360 && SumScoreSprintTechAqp20162 >= 5040) {
-    stuContar += 1;
-  }
-  SumScoreSprintHseAqp20162 = 0; 
-  SumScoreSprintTechAqp20162 = 0;
-}
-console.log(stuContar);/* para la data */
-// El Net Promoter Score (NPS) promedio de los sprints cursados. El NPS se calcula en base a la encuesta que las estudiantes responden al respecto de la recomendación que darían de Laboratoria, bajo la siguiente fórmula:
-
-var totalNpsSprintAqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].ratings.length ; i++) {
-  var raitingspNpsromoters = data.AQP['2016-2'].ratings[i].nps.promoters;
-  var raitingspNpsDetractors = data.AQP['2016-2'].ratings[i].nps.detractors;
-  var NpsSprint = raitingspNpsromoters - raitingspNpsDetractors;
-  totalNpsSprintAqp20162 += NpsSprint;
-}
-var npstotalAqp20162 = totalNpsSprintAqp20162 / 4;
-console.log(npstotalAqp20162);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
-var totalPromotersAqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].ratings.length ; i++) {
-  var raitingspNpsromoters = data.AQP['2016-2'].ratings[i].nps.promoters;
-  totalPromotersAqp20162 += raitingspNpsromoters;
-}
-var npsTotalPromotersAqp20162 = (totalPromotersAqp20162 / 4);
-console.log(npsTotalPromotersAqp20162);/* para la data */
-
-var totalPasiveAqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].ratings.length ; i++) {
-  var raitingspNpsromoters = data.AQP['2016-2'].ratings[i].nps.passive;
-  totalPasiveAqp20162 += raitingspNpsromoters;
-}
-npsTotalPasiveAqp20162 = totalPasiveAqp20162 / 4;
-console.log(npsTotalPasiveAqp20162);/* para la data */
-
-var totalDetractorsAqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].ratings.length ; i++) {
-  var raitingspNpsromoters = data.AQP['2016-2'].ratings[i].nps.detractors;
-  totalDetractorsAqp20162 += raitingspNpsromoters;
-}
-var npsTotalDetractorsAqp20162 = totalDetractorsAqp20162 / 4;
-console.log(npsTotalDetractorsAqp20162);/* para la data */
-
-// La cantidad y el porcentaje que representa el total de estudiantes que superan la meta de puntos técnicos en promedio y por sprint.
-
-var sprintTech1Aqp20162 = 0;
-var sprintTech2Aqp20162 = 0;
-var sprintTech3Aqp20162 = 0;
-var sprintTech4Aqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].students.length ; i++) {
-  for (var j = 0; j < data.AQP['2016-2'].students[i].sprints.length ; j++) {
-    var stuScoreTech = data.AQP['2016-2'].students[i].sprints[j].score.tech;
-    var sprintNumber = data.AQP['2016-2'].students[i].sprints[j].number;
-    if (sprintNumber == 1 && stuScoreTech >= 1260) {
-      sprintTech1Aqp20162 += 1;
-    } else if (sprintNumber == 2 && stuScoreTech >= 1260) {
-      sprintTech2Aqp20162 += 1;
-    } else if (sprintNumber == 3 && stuScoreTech >= 1260) {
-      sprintTech3Aqp20162 += 1;
-    } else if (sprintNumber == 4 && stuScoreTech >= 1260) {
-      sprintTech4Aqp20162 += 1;
-    }
-  }
-}
-console.log(sprintTech1Aqp20162);/* para la data */
-console.log(sprintTech2Aqp20162);/* para la data */
-console.log(sprintTech3Aqp20162);/* para la data */
-console.log(sprintTech4Aqp20162);/* para la data */
-
-var sprintHse1Aqp20162 = 0;
-var sprintHse2Aqp20162 = 0;
-var sprintHse3Aqp20162 = 0;
-var sprintHse4Aqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].students.length ; i++) {
-  for (var j = 0; j < data.AQP['2016-2'].students[i].sprints.length ; j++) {
-    var stuScoreHse = data.AQP['2016-2'].students[i].sprints[j].score.hse;
-    var sprintNumber = data.AQP['2016-2'].students[i].sprints[j].number;
-    if (sprintNumber == 1 && stuScoreHse >= 840) {
-      sprintHse1Aqp20162 += 1;
-    } else if (sprintNumber == 2 && stuScoreHse >= 840) {
-      sprintHse2Aqp20162 += 1;
-    } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Aqp20162 +=1;
-    } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Aqp20162 += 1; 
-    }
-  }
-}
-console.log(sprintHse1Aqp20162);/* para la data */
-console.log(sprintHse2Aqp20162);/* para la data */
-console.log(sprintHse3Aqp20162);/* para la data */
-console.log(sprintHse4Aqp20162);/* para la data */
-
-// El porcentaje de estudiantes satisfechas con la experiencia de Laboratoria.
-
-var pctjStudentsSatAqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].ratings.length ; i++) {
-  var studentsCumple = data.AQP['2016-2'].ratings[i].student.cumple;
-  var studentsSupera = data.AQP['2016-2'].ratings[i].student.supera;
-  var studentSat = studentsCumple + studentsSupera;
-  pctjStudentsSatAqp20162 += studentSat;
-}
-var totalSatisfationAqp20162 = pctjStudentsSatAqp20162 / 4;
-console.log(totalSatisfationAqp20162);/* para la data */
-
-// La puntuación promedio de l@s profesores.
-
-var ptPromTeacherAqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].ratings.length ; i++) {
-  var ptTeacher = data.AQP['2016-2'].ratings[i].teacher;
-  ptPromTeacherAqp20162 += ptTeacher;
-}
-ptPromTeacherAqp20162 = Number(ptPromTeacherAqp20162.toFixed(2));
-var scoreTeacherAqp20162 = ptPromTeacherAqp20162 / 4;
-console.log(scoreTeacherAqp20162);/* para la data */
-
-// La puntuación promedio de l@s jedi masters.
-
-var ptPromJedisAqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].ratings.length ; i++) {
-  var ptJedis = data.AQP['2016-2'].ratings[i].jedi;
-  ptPromJedisAqp20162 += ptJedis;
-}
-var ptJedistotalAqp20162 = ptPromJedisAqp20162 / 4 ;
-ptJedistotalAqp20162 = ptJedistotalAqp20162.toFixed(2);
-var scoreJediAqp20162 = ptJedistotalAqp20162;
-console.log(scoreJediAqp20162);/* para la data */
-
-// Arequipa 2017-1
-
 var studentsAqp20171UP = 0;
 var studentsAqp20171Down = 0;
 for (var i = 0; i < data.AQP['2017-1'].students.length ; i++) {
@@ -663,7 +513,7 @@ console.log(detractorsLim20162);/* para la data */
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
 var SumScoreSprintHseLim20162 = 0;
 var SumScoreSprintTechLim20162 = 0;
-var stuContarLim20162 = 0;
+var stuContar = 0;
 for (var i = 0; i < data.LIM['2016-2'].students.length ; i++) {
   for (var j = 0; j < data.LIM['2016-2'].students[i].sprints.length ; j++) {
     var stuScoreHse = data.LIM['2016-2'].students[i].sprints[j].score.hse;
@@ -671,14 +521,12 @@ for (var i = 0; i < data.LIM['2016-2'].students.length ; i++) {
     SumScoreSprintHseLim20162 += stuScoreHse;
     SumScoreSprintTechLim20162 += stuScoreTech;
   } if (SumScoreSprintHseLim20162 >= 1680 && SumScoreSprintTechLim20162 >= 2520) {
-    stuContarLim20162 += 1;
+    stuContar += 1;
   }
   SumScoreSprintHseLim20162 = 0; 
   SumScoreSprintTechLim20162 = 0;
 }
-console.log(stuContarLim20162);/* para la data */
-var prctstuContarLim2016 = ((stuContarLim20162 / totalstudentsLim20162) * 100).toFixed(2);
-console.log(prctstuContarLim2016); /* para la data */
+console.log(stuContar);/* para la data */
 // El Net Promoter Score (NPS) promedio de los sprints cursados. El NPS se calcula en base a la encuesta que las estudiantes responden al respecto de la recomendación que darían de Laboratoria, bajo la siguiente fórmula:
 
 var totalNpsSprintLim20162 = 0;
@@ -959,8 +807,6 @@ ptJedistotalLim20171 = ptJedistotalLim20171.toFixed(2);
 var scoreJediLim20171 = ptJedistotalLim20171;
 console.log(scoreJediLim20171);/* para la data */
 
-// Lima 2017-2 
-
 var studentsLim20172UP = 0;
 var studentsLim20172Down = 0;
 for (var i = 0; i < data.LIM['2017-2'].students.length ; i++) {
@@ -1006,7 +852,7 @@ for (var i = 0; i < data.LIM['2017-2'].ratings.length ; i++) {
   var NpsSprint = raitingspNpsromoters - raitingspNpsDetractors;
   totalNpsSprintLim20172 += NpsSprint;
 }
-var npstotalLim20172 = (totalNpsSprintLim20172 / 2).toFixed(2);;
+var npstotalLim20172 = (totalNpsSprintLim20172 / 3).toFixed(2);;
 console.log(npstotalLim20172);/* para la data */
 // para los porcentajes promoters - pasive y detractors  
 var totalPromotersLim20172 = 0;
@@ -1598,7 +1444,6 @@ ptJedistotalScl20172 = ptJedistotalScl20172.toFixed(2);
 var scoreJediScl20172 = ptJedistotalScl20172;
 console.log(scoreJediScl20172);/* para la data */
 
-
 // Eventos para manipular la data 
 
 var listCity = document.getElementById('listCity');
@@ -1611,20 +1456,15 @@ listSedes.addEventListener('click', function(event) {
   lima20162.addEventListener('click', function(event) {
     title.innerHTML = 'LIMA 2016 II'; 
     listCity.classList.add('hide');
-    var totalStudents = document.getElementById('totalStudents');
+    var totalStudents = document.getElementById('totalStudents')
     totalStudents.textContent = totalstudentsLim20162;
-    var detractors = document.getElementById('detractors');
+    var detractors = document.getElementById('detractors')
     detractors.textContent = detractorsLim20162 + '%';
     detractors.classList.add('fontStrong');
-    var stuContar = document.getElementById('stuContar');
-    stuContar.textContent = stuContarLim20162;
-    var prctstuContar = document.getElementById('prctstuContar');
-    prctstuContar.textContent = prctstuContarLim2016 + '%';
-    prctstuContar.classList.add('fontStrong');
     var totalStd = document.getElementById('totalStd');
     totalStd.textContent = totalstudentsLim20162;
-    
     event.preventDefault();
   });
 });
+
 
