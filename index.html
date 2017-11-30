@@ -21,7 +21,7 @@
     <section>
         <div class="section-1">
             <h3 id="title" class="capital-letter">Lima 2017 - II</h3>
-            <span><a id="listSedes" href=""><i class="fa fa-caret-down  fa-3x" aria-hidden="true"></i></a></span>
+            <span><a id="listSedes"href=""><i class="fa fa-caret-down  fa-3x" aria-hidden="true"></i></a></span>
             <div>
                 <h5 class="capital-letter"><a href="">overview</a></h5>
                 <h5 class="capital-letter"><a href="">students</a></h5>
@@ -51,8 +51,8 @@
                     <h6 class="capital-letter">achievement</h6>
                     <div class="box-container-data">
                         <div class="box-data">
-                            <span id="stuContar">105</span>
-                            <p class="capital-letter"#> students that meet de target</p>
+                            <span  id="stuContar">105</span>
+                            <p class="capital-letter"># students that meet de target</p>
                         </div>
                         <div class="box-data">
                             <span id="prctstuContar">78% <i class="fa fa-caret-up" aria-hidden="true"></i></span>
@@ -67,14 +67,14 @@
                     <h6 class="capital-letter">net promoter score</h6>
                     <div class="box-container-data">
                         <div class="box-data">
-                            <span>78 % <i class="fa fa-caret-up" aria-hidden="true"></i> </span>
+                            <span id="npstotal">78 % <i class="fa fa-caret-up" aria-hidden="true"></i> </span>
                             <p class="capital-letter"> % cumulative nps </p>
                         </div>
                         <div class="box-data">
                             <ul>
-                                <li class="capital-letter">60 % promoters</li>
-                                <li class="capital-letter">30 % pasive</li>
-                                <li class="capital-letter">10 % detractors</li>
+                                <li class="capital-letter" id="npsTotalPromoters">60 % promoters</li>
+                                <li class="capital-letter" id="npsTotalPasive">30 % pasive</li>
+                                <li class="capital-letter" id="npsTotalDetractors">10 % detractors</li>
                             </ul>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
               <option value="sprint-3">sprint 3</option>
               <option value="sprint-4">sprint 4</option>
           </select>
-      
+
 
       <div class="cuadrado">
         <div class="box-sprint">
@@ -114,7 +114,7 @@
        </div>
 
        <div class="fondo">
-       <h3 class="subtitle">LIFE SKILLS 
+       <h3 class="subtitle">LIFE SKILLS
         <select id ="select" title="overaL (Cumulative)">
           <option value="sprint-1">sprint 1</option>
           <option value="sprint-2">sprint 2</option>
@@ -141,13 +141,13 @@
         </div>
         </div>
 
-    
+
     <section class="section-5">
         <div class="section-5">
             <div class="box-evaluation">
                 <h6 class="capital-letter">student satisfaction</h6>
                 <div class="box-points">
-                    <p>140</p>
+                    <p id="totalSatisfation">140</p>
                     <span class="capital-letter">% meeting or exceeding expectations (cumulative)</span>
                 </div>
                 <figure>
@@ -157,7 +157,7 @@
             <div class="box-evaluation">
                 <h6 class="capital-letter">teacher rating</h6>
                 <div class="box-points">
-                    <p>4.2</p>
+                    <p id="scoreTeacher">4.2</p>
                     <span class="capital-letter">overall teacher rating (cumulative)</span>
                 </div>
                 <figure>
@@ -167,7 +167,7 @@
             <div class="box-evaluation">
                 <h6 class="capital-letter">jedi master rating</h6>
                 <div class="box-points">
-                    <p>50 <i class="fa fa-caret-up" aria-hidden="true"></i></p>
+                    <p id="scoreJedi">50 <i class="fa fa-caret-up" aria-hidden="true"></i></p>
                     <span class="capital-letter">overall jedi rating (cumulative)</span>
                 </div>
                 <figure>
@@ -181,27 +181,27 @@
             <li class="capital-letter">lima</li>
             <li class="capital-letter"><a id ="lima20162" href=""></a>2016 ii</li>
             <li class="capital-letter"><a id ="lima20171" href=""></a>2017 i</li>
-            <li class="capital-letter"><a id ="lima20172"href=""></a>2017 ii</li>
+            <li class="capital-letter"><a id ="lima20172" href=""></a>2017 ii</li>
         </ul>
         <ul>
             <li class="capital-letter">arequipa</li>
-            <li class="capital-letter"><a href=""></a>2016 ii</li>
-            <li class="capital-letter"><a href=""></a>2017 i</li>
+            <li class="capital-letter"><a  id="arequipa20162" href=""></a>2016 ii</li>
+            <li class="capital-letter"><a id="arequipa20171" href=""></a>2017 i</li>
         </ul>
         <ul>
             <li class="capital-letter">santiago de chile</li>
-            <li class="capital-letter"><a href=""></a>2016 ii</li>
-            <li class="capital-letter"><a href=""></a>2017 i</li>
-            <li class="capital-letter"><a href=""></a>2017 ii</li>
+            <li class="capital-letter"><a id="chile20162" href=""></a>2016 ii</li>
+            <li class="capital-letter"><a id="chile20171" href=""></a>2017 i</li>
+            <li class="capital-letter"><a id="chile20172" href=""></a>2017 ii</li>
         </ul>
         <ul>
             <li class="capital-letter">ciudad de méxico</li>
-            <li class="capital-letter"><a href=""></a>2017 i</li>
-            <li class="capital-letter"><a href=""></a>2017 ii</li>
+            <li class="capital-letter"><a id="mexico20171" href=""></a>2017 i</li>
+            <li class="capital-letter"><a id="mexico20172" href=""></a>2017 ii</li>
         </ul>
     </div>
     <!--estructura de la section students-->
-    <section class="students">
+    <!--<section class="students">
             <div class="colum-left">
               <div class="specialization">
                   <h1>SPECIALIZATION:</h1>
@@ -246,11 +246,11 @@
                 </div>
               </div>
               <div id="add-Names">
-      
+
               </div>
             </div>
           </section>
-      
+-->
     <!-- Base de datos -->
 		<script src="./js/data.js"></script>
 		<!-- Aquí va tus archivos JS -->
