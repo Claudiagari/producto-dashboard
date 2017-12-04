@@ -11,9 +11,11 @@ console.log(data.AQP['2016-2'].students[0].sprints[0].score.tech)
  * Funcionalidad de tu producto
  */
 // Puedes hacer uso de la base de datos a través de la variable `data`
-// Total de estudiantes 
+// Total de estudiantes
 // El total de estudiantes presentes por sede y generación.
 // El porcentaje de deserción de estudiantes.
+var clickAño = document.getElementById('students')
+function estudents
 var studentsAqp20171UP = 0;
 var studentsAqp20171Down = 0;
 for (var i = 0; i < data.AQP['2017-1'].students.length ; i++) {
@@ -29,8 +31,8 @@ studentsAqp20171Down;
 var totalstudentsAqp20171 = studentsAqp20171UP + studentsAqp20171Down;
 var detractorsAqp20171 = (studentsAqp20171Down / totalstudentsAqp20171) * 100;
 detractorsAqp20171 = detractorsAqp20171.toFixed(2);
-console.log(totalstudentsAqp20171);/* para la data */ 
-console.log(detractorsAqp20171);/* para la data */ 
+console.log(totalstudentsAqp20171);/* para la data */
+console.log(detractorsAqp20171);/* para la data */
 
 // obteniendo score mayor 70%
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
@@ -46,7 +48,7 @@ for (var i = 0; i < data.AQP['2017-1'].students.length ; i++) {
   } if (SumScoreSprintHseAqp20171 >= 2520 && SumScoreSprintTechAqp20171 >= 3780) {
     stuContar += 1;
   }
-  SumScoreSprintHseAqp20171 = 0; 
+  SumScoreSprintHseAqp20171 = 0;
   SumScoreSprintTechAqp20171 = 0;
 }
 console.log(stuContar);/* para la data */
@@ -61,7 +63,7 @@ for (var i = 0; i < data.AQP['2017-1'].ratings.length ; i++) {
 }
 var npstotalAqp20171 = (totalNpsSprintAqp20171 / 3).toFixed(2);;
 console.log(npstotalAqp20171);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
+// para los porcentajes promoters - pasive y detractors
 var totalPromotersAqp20171 = 0;
 for (var i = 0; i < data.AQP['2017-1'].ratings.length ; i++) {
   var raitingspNpsromoters = data.AQP['2017-1'].ratings[i].nps.promoters;
@@ -127,7 +129,7 @@ for (var i = 0; i < data.AQP['2017-1'].students.length ; i++) {
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
       sprintHse3Aqp20171 +=1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Aqp20171 += 1; 
+      sprintHse4Aqp20171 += 1;
     }
   }
 }
@@ -188,8 +190,8 @@ studentsCdmx20171Down;
 var totalstudentsCdmx20171 = studentsCdmx20171UP + studentsCdmx20171Down;
 var detractorsCdmx20171 = (studentsCdmx20171Down / totalstudentsCdmx20171) * 100;
 detractorsCdmx20171 = detractorsCdmx20171.toFixed(2);
-console.log(totalstudentsCdmx20171);/* para la data */ 
-console.log(detractorsCdmx20171);/* para la data */ 
+console.log(totalstudentsCdmx20171);/* para la data */
+console.log(detractorsCdmx20171);/* para la data */
 
 // obteniendo score mayor 70%
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
@@ -205,7 +207,7 @@ for (var i = 0; i < data.CDMX['2017-1'].students.length ; i++) {
   } if (SumScoreSprintHseCdmx20171 >= 2520 && SumScoreSprintTechCdmx20171 >= 3780) {
     stuContar += 1;
   }
-  SumScoreSprintHseCdmx20171 = 0; 
+  SumScoreSprintHseCdmx20171 = 0;
   SumScoreSprintTechCdmx20171 = 0;
 }
 console.log(stuContar);/* para la data */
@@ -220,7 +222,7 @@ for (var i = 0; i < data.CDMX['2017-1'].ratings.length ; i++) {
 }
 var npstotalCdmx20171 = (totalNpsSprintCdmx20171 / 3).toFixed(2);;
 console.log(npstotalCdmx20171);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
+// para los porcentajes promoters - pasive y detractors
 var totalPromotersCdmx20171 = 0;
 for (var i = 0; i < data.CDMX['2017-1'].ratings.length ; i++) {
   var raitingspNpsromoters = data.CDMX['2017-1'].ratings[i].nps.promoters;
@@ -286,7 +288,7 @@ for (var i = 0; i < data.CDMX['2017-1'].students.length ; i++) {
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
       sprintHse3Cdmx20171 +=1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Cdmx20171 += 1; 
+      sprintHse4Cdmx20171 += 1;
     }
   }
 }
@@ -347,8 +349,8 @@ studentsCdmx20172Down;
 var totalstudentsCdmx20172 = studentsCdmx20172UP + studentsCdmx20172Down;
 var detractorsCdmx20172 = (studentsCdmx20172Down / totalstudentsCdmx20172) * 100;
 detractorsCdmx20172 = detractorsCdmx20172.toFixed(2);
-console.log(totalstudentsCdmx20172);/* para la data */ 
-console.log(detractorsCdmx20172);/* para la data */ 
+console.log(totalstudentsCdmx20172);/* para la data */
+console.log(detractorsCdmx20172);/* para la data */
 
 // obteniendo score mayor 70%
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
@@ -364,7 +366,7 @@ for (var i = 0; i < data.CDMX['2017-2'].students.length ; i++) {
   } if (SumScoreSprintHseCdmx20172 >= 1680 && SumScoreSprintTechCdmx20172 >= 2520) {
     stuContar += 1;
   }
-  SumScoreSprintHseCdmx20172 = 0; 
+  SumScoreSprintHseCdmx20172 = 0;
   SumScoreSprintTechCdmx20172 = 0;
 }
 console.log(stuContar);/* para la data */
@@ -379,7 +381,7 @@ for (var i = 0; i < data.CDMX['2017-2'].ratings.length ; i++) {
 }
 var npstotalCdmx20172 = (totalNpsSprintCdmx20172 / 3).toFixed(2);;
 console.log(npstotalCdmx20172);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
+// para los porcentajes promoters - pasive y detractors
 var totalPromotersCdmx20172 = 0;
 for (var i = 0; i < data.CDMX['2017-2'].ratings.length ; i++) {
   var raitingspNpsromoters = data.CDMX['2017-2'].ratings[i].nps.promoters;
@@ -445,7 +447,7 @@ for (var i = 0; i < data.CDMX['2017-2'].students.length ; i++) {
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
       sprintHse3Cdmx20172 +=1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Cdmx20172 += 1; 
+      sprintHse4Cdmx20172 += 1;
     }
   }
 }
@@ -506,8 +508,8 @@ studentsLim20162Down;
 var totalstudentsLim20162 = studentsLim20162UP + studentsLim20162Down;
 var detractorsLim20162 = (studentsLim20162Down / totalstudentsLim20162) * 100;
 detractorsLim20162 = detractorsLim20162.toFixed(2);
-console.log(totalstudentsLim20162);/* para la data */ 
-console.log(detractorsLim20162);/* para la data */ 
+console.log(totalstudentsLim20162);/* para la data */
+console.log(detractorsLim20162);/* para la data */
 
 // obteniendo score mayor 70%
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
@@ -523,7 +525,7 @@ for (var i = 0; i < data.LIM['2016-2'].students.length ; i++) {
   } if (SumScoreSprintHseLim20162 >= 1680 && SumScoreSprintTechLim20162 >= 2520) {
     stuContar += 1;
   }
-  SumScoreSprintHseLim20162 = 0; 
+  SumScoreSprintHseLim20162 = 0;
   SumScoreSprintTechLim20162 = 0;
 }
 console.log(stuContar);/* para la data */
@@ -538,7 +540,7 @@ for (var i = 0; i < data.LIM['2016-2'].ratings.length ; i++) {
 }
 var npstotalLim20162 = (totalNpsSprintLim20162 / 2).toFixed(2);;
 console.log(npstotalLim20162);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
+// para los porcentajes promoters - pasive y detractors
 var totalPromotersLim20162 = 0;
 for (var i = 0; i < data.LIM['2016-2'].ratings.length ; i++) {
   var raitingspNpsromoters = data.LIM['2016-2'].ratings[i].nps.promoters;
@@ -604,7 +606,7 @@ for (var i = 0; i < data.LIM['2016-2'].students.length ; i++) {
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
       sprintHse3Lim20162 +=1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Lim20162 += 1; 
+      sprintHse4Lim20162 += 1;
     }
   }
 }
@@ -665,8 +667,8 @@ studentsLim20171Down;
 var totalstudentsLim20171 = studentsLim20171UP + studentsLim20171Down;
 var detractorsLim20171 = (studentsLim20171Down / totalstudentsLim20171) * 100;
 detractorsLim20171 = detractorsLim20171.toFixed(2);
-console.log(totalstudentsLim20171);/* para la data */ 
-console.log(detractorsLim20171);/* para la data */ 
+console.log(totalstudentsLim20171);/* para la data */
+console.log(detractorsLim20171);/* para la data */
 
 // obteniendo score mayor 70%
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
@@ -682,7 +684,7 @@ for (var i = 0; i < data.LIM['2017-1'].students.length ; i++) {
   } if (SumScoreSprintHseLim20171 >= 3360 && SumScoreSprintTechLim20171 >= 5040) {
     stuContar += 1;
   }
-  SumScoreSprintHseLim20171 = 0; 
+  SumScoreSprintHseLim20171 = 0;
   SumScoreSprintTechLim20171 = 0;
 }
 console.log(stuContar);/* para la data */
@@ -697,7 +699,7 @@ for (var i = 0; i < data.LIM['2017-1'].ratings.length ; i++) {
 }
 var npstotalLim20171 = totalNpsSprintLim20171 / 4;
 console.log(npstotalLim20171);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
+// para los porcentajes promoters - pasive y detractors
 var totalPromotersLim20171 = 0;
 for (var i = 0; i < data.LIM['2017-1'].ratings.length ; i++) {
   var raitingspNpsromoters = data.LIM['2017-1'].ratings[i].nps.promoters;
@@ -763,7 +765,7 @@ for (var i = 0; i < data.LIM['2017-1'].students.length ; i++) {
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
       sprintHse3Lim20171 +=1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Lim20171 += 1; 
+      sprintHse4Lim20171 += 1;
     }
   }
 }
@@ -822,8 +824,8 @@ studentsLim20172Down;
 var totalstudentsLim20172 = studentsLim20172UP + studentsLim20172Down;
 var detractorsLim20172 = (studentsLim20172Down / totalstudentsLim20172) * 100;
 detractorsLim20172 = detractorsLim20172.toFixed(2);
-console.log(totalstudentsLim20172);/* para la data */ 
-console.log(detractorsLim20172);/* para la data */ 
+console.log(totalstudentsLim20172);/* para la data */
+console.log(detractorsLim20172);/* para la data */
 
 // obteniendo score mayor 70%
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
@@ -839,7 +841,7 @@ for (var i = 0; i < data.LIM['2017-2'].students.length ; i++) {
   } if (SumScoreSprintHseLim20172 >= 1680 && SumScoreSprintTechLim20172 >= 2520) {
     stuContar += 1;
   }
-  SumScoreSprintHseLim20172 = 0; 
+  SumScoreSprintHseLim20172 = 0;
   SumScoreSprintTechLim20172 = 0;
 }
 console.log(stuContar);/* para la data */
@@ -854,7 +856,7 @@ for (var i = 0; i < data.LIM['2017-2'].ratings.length ; i++) {
 }
 var npstotalLim20172 = (totalNpsSprintLim20172 / 3).toFixed(2);;
 console.log(npstotalLim20172);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
+// para los porcentajes promoters - pasive y detractors
 var totalPromotersLim20172 = 0;
 for (var i = 0; i < data.LIM['2017-2'].ratings.length ; i++) {
   var raitingspNpsromoters = data.LIM['2017-2'].ratings[i].nps.promoters;
@@ -920,7 +922,7 @@ for (var i = 0; i < data.LIM['2017-2'].students.length ; i++) {
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
       sprintHse3Lim20172 +=1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Lim20172 += 1; 
+      sprintHse4Lim20172 += 1;
     }
   }
 }
@@ -981,8 +983,8 @@ studentsScl20162Down;
 var totalstudentsScl20162 = studentsScl20162UP + studentsScl20162Down;
 var detractorsScl20162 = (studentsScl20162Down / totalstudentsScl20162) * 100;
 detractorsScl20162 = detractorsScl20162.toFixed(2);
-console.log(totalstudentsScl20162);/* para la data */ 
-console.log(detractorsScl20162);/* para la data */ 
+console.log(totalstudentsScl20162);/* para la data */
+console.log(detractorsScl20162);/* para la data */
 
 // obteniendo score mayor 70%
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
@@ -998,7 +1000,7 @@ for (var i = 0; i < data.SCL['2016-2'].students.length ; i++) {
   } if (SumScoreSprintHseScl20162 >= 3360 && SumScoreSprintTechScl20162 >= 5040) {
     stuContar += 1;
   }
-  SumScoreSprintHseScl20162 = 0; 
+  SumScoreSprintHseScl20162 = 0;
   SumScoreSprintTechScl20162 = 0;
 }
 console.log(stuContar);/* para la data */
@@ -1013,7 +1015,7 @@ for (var i = 0; i < data.SCL['2016-2'].ratings.length ; i++) {
 }
 var npstotalScl20162 = totalNpsSprintScl20162 / 4;
 console.log(npstotalScl20162);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
+// para los porcentajes promoters - pasive y detractors
 var totalPromotersScl20162 = 0;
 for (var i = 0; i < data.SCL['2016-2'].ratings.length ; i++) {
   var raitingspNpsromoters = data.SCL['2016-2'].ratings[i].nps.promoters;
@@ -1079,7 +1081,7 @@ for (var i = 0; i < data.SCL['2016-2'].students.length ; i++) {
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
       sprintHse3Scl20162 +=1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Scl20162 += 1; 
+      sprintHse4Scl20162 += 1;
     }
   }
 }
@@ -1141,8 +1143,8 @@ studentsScl20171Down;
 var totalstudentsScl20171 = studentsScl20171UP + studentsScl20171Down;
 var detractorsScl20171 = (studentsScl20171Down / totalstudentsScl20171) * 100;
 detractorsScl20171 = detractorsScl20171.toFixed(2);
-console.log(totalstudentsScl20171);/* para la data */ 
-console.log(detractorsScl20171);/* para la data */ 
+console.log(totalstudentsScl20171);/* para la data */
+console.log(detractorsScl20171);/* para la data */
 
 // obteniendo score mayor 70%
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
@@ -1158,7 +1160,7 @@ for (var i = 0; i < data.SCL['2017-1'].students.length ; i++) {
   } if (SumScoreSprintHseScl20171 >= 2520 && SumScoreSprintTechScl20171 >= 3780) {
     stuContar += 1;
   }
-  SumScoreSprintHseScl20171 = 0; 
+  SumScoreSprintHseScl20171 = 0;
   SumScoreSprintTechScl20171 = 0;
 }
 console.log(stuContar);/* para la data */
@@ -1173,7 +1175,7 @@ for (var i = 0; i < data.SCL['2017-1'].ratings.length ; i++) {
 }
 var npstotalScl20171 = (totalNpsSprintScl20171 / 3).toFixed(2);;
 console.log(npstotalScl20171);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
+// para los porcentajes promoters - pasive y detractors
 var totalPromotersScl20171 = 0;
 for (var i = 0; i < data.SCL['2017-1'].ratings.length ; i++) {
   var raitingspNpsromoters = data.SCL['2017-1'].ratings[i].nps.promoters;
@@ -1239,7 +1241,7 @@ for (var i = 0; i < data.SCL['2017-1'].students.length ; i++) {
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
       sprintHse3Scl20171 +=1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Scl20171 += 1; 
+      sprintHse4Scl20171 += 1;
     }
   }
 }
@@ -1300,8 +1302,8 @@ studentsScl20172Down;
 var totalstudentsScl20172 = studentsScl20172UP + studentsScl20172Down;
 var detractorsScl20172 = (studentsScl20172Down / totalstudentsScl20172) * 100;
 detractorsScl20172 = detractorsScl20172.toFixed(2);
-console.log(totalstudentsScl20172);/* para la data */ 
-console.log(detractorsScl20172);/* para la data */ 
+console.log(totalstudentsScl20172);/* para la data */
+console.log(detractorsScl20172);/* para la data */
 
 // obteniendo score mayor 70%
 // La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
@@ -1319,7 +1321,7 @@ for (var i = 0; i < data.SCL['2017-2'].students.length ; i++) {
   } if (SumScoreSprintHseScl20172 >= 1680 && SumScoreSprintTechScl20172 >= 2520) {
     stuContar += 1;
   }
-  SumScoreSprintHseScl20172 = 0; 
+  SumScoreSprintHseScl20172 = 0;
   SumScoreSprintTechScl20172 = 0;
 }
 console.log(stuContar);/* para la data */
@@ -1334,7 +1336,7 @@ for (var i = 0; i < data.SCL['2017-2'].ratings.length ; i++) {
 }
 var npstotalScl20172 = (totalNpsSprintScl20172 / 2).toFixed(2);;
 console.log(npstotalScl20172);/* para la data */
-// para los porcentajes promoters - pasive y detractors  
+// para los porcentajes promoters - pasive y detractors
 var totalPromotersScl20172 = 0;
 for (var i = 0; i < data.SCL['2017-2'].ratings.length ; i++) {
   var raitingspNpsromoters = data.SCL['2017-2'].ratings[i].nps.promoters;
@@ -1400,7 +1402,7 @@ for (var i = 0; i < data.SCL['2017-2'].students.length ; i++) {
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
       sprintHse3Scl20172 +=1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
-      sprintHse4Scl20172 += 1; 
+      sprintHse4Scl20172 += 1;
     }
   }
 }
@@ -1444,7 +1446,7 @@ ptJedistotalScl20172 = ptJedistotalScl20172.toFixed(2);
 var scoreJediScl20172 = ptJedistotalScl20172;
 console.log(scoreJediScl20172);/* para la data */
 
-// Eventos para manipular la data 
+// Eventos para manipular la data
 
 var listCity = document.getElementById('listCity');
 var title = document.getElementById('title');
@@ -1454,7 +1456,7 @@ listSedes.addEventListener('click', function(event) {
   event.preventDefault();
   var lima20162 = document.getElementById('lima20162');
   lima20162.addEventListener('click', function(event) {
-    title.innerHTML = 'LIMA 2016 II'; 
+    title.innerHTML = 'LIMA 2016 II';
     listCity.classList.add('hide');
     var totalStudents = document.getElementById('totalStudents')
     totalStudents.textContent = totalstudentsLim20162;
@@ -1466,5 +1468,3 @@ listSedes.addEventListener('click', function(event) {
     event.preventDefault();
   });
 });
-
-

@@ -7,7 +7,7 @@
 // El porcentaje de deserción de estudiantes.
 var studentsAqp20162UP = 0;
 var studentsAqp20162Down = 0;
-for (var i = 0; i < data.AQP['2016-2'].students.length ; i++ ) {
+for (var i = 0; i < data.AQP['2016-2'].students.length ; i++) {
   var studentsTotal = data.AQP['2016-2'].students[i].active;
   if (studentsTotal === true) {
     studentsAqp20162UP += 1;
@@ -31,7 +31,7 @@ var stuContar = 0;
 for (var i = 0; i < data.AQP['2016-2'].students.length ; i++) {
   for (var j = 0; j < data.AQP['2016-2'].students[i].sprints.length ; j++) {
     var stuScoreHse = data.AQP['2016-2'].students[i].sprints[j].score.hse;
-    var stuScoreTech =data.AQP['2016-2'].students[i].sprints[j].score.tech;
+    var stuScoreTech = data.AQP['2016-2'].students[i].sprints[j].score.tech;
     SumScoreSprintHseAqp20162 += stuScoreHse;
     SumScoreSprintTechAqp20162 += stuScoreTech;
   } if (SumScoreSprintHseAqp20162 >= 3360 && SumScoreSprintTechAqp20162 >= 5040) {
@@ -78,23 +78,24 @@ var npsTotalDetractorsAqp20162 = totalDetractorsAqp20162 / 4;
 console.log(npsTotalDetractorsAqp20162);/* para la data */
 
 // La cantidad y el porcentaje que representa el total de estudiantes que superan la meta de puntos técnicos en promedio y por sprint.
-
-var sprintTech1Aqp20162 = 0;
-var sprintTech2Aqp20162 = 0;
-var sprintTech3Aqp20162 = 0;
-var sprintTech4Aqp20162 = 0;
-for (var i = 0; i < data.AQP['2016-2'].students.length ; i++) {
-  for (var j = 0; j < data.AQP['2016-2'].students[i].sprints.length ; j++) {
-    var stuScoreTech = data.AQP['2016-2'].students[i].sprints[j].score.tech;
-    var sprintNumber = data.AQP['2016-2'].students[i].sprints[j].number;
-    if (sprintNumber == 1 && stuScoreTech >= 1260) {
-      sprintTech1Aqp20162 += 1;
-    } else if (sprintNumber == 2 && stuScoreTech >= 1260) {
-      sprintTech2Aqp20162 += 1;
-    } else if (sprintNumber == 3 && stuScoreTech >= 1260) {
-      sprintTech3Aqp20162 += 1;
-    } else if (sprintNumber == 4 && stuScoreTech >= 1260) {
-      sprintTech4Aqp20162 += 1;
+function sprintTech(e) {
+  var sprintTech = 0;
+  var sprintTech = 0;
+  var sprintTech = 0;
+  var sprintTech = 0;
+  for (var i = 0; i < e.students.length ; i++) {
+    for (var j = 0; j < e.students[i].sprints.length ; j++) {
+      var stuScoreTech = e.students[i].sprints[j].score.tech;
+      var sprintNumber = e.students[i].sprints[j].number;
+      if (sprintNumber == 1 && stuScoreTech >= 1260) {
+        sprintTech1 += 1;
+      } else if (sprintNumber == 2 && stuScoreTech >= 1260) {
+        sprintTech2 += 1;
+      } else if (sprintNumber == 3 && stuScoreTech >= 1260) {
+        sprintTech3 += 1;
+      } else if (sprintNumber == 4 && stuScoreTech >= 1260) {
+        sprintTech4 += 1;
+      }
     }
   }
 }
@@ -116,7 +117,7 @@ for (var i = 0; i < data.AQP['2016-2'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Aqp20162 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Aqp20162 +=1;
+      sprintHse3Aqp20162 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Aqp20162 += 1; 
     }
@@ -275,7 +276,7 @@ for (var i = 0; i < data.AQP['2017-1'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Aqp20171 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Aqp20171 +=1;
+      sprintHse3Aqp20171 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Aqp20171 += 1; 
     }
@@ -434,7 +435,7 @@ for (var i = 0; i < data.CDMX['2017-1'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Cdmx20171 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Cdmx20171 +=1;
+      sprintHse3Cdmx20171 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Cdmx20171 += 1; 
     }
@@ -593,7 +594,7 @@ for (var i = 0; i < data.CDMX['2017-2'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Cdmx20172 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Cdmx20172 +=1;
+      sprintHse3Cdmx20172 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Cdmx20172 += 1; 
     }
@@ -754,7 +755,7 @@ for (var i = 0; i < data.LIM['2016-2'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Lim20162 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Lim20162 +=1;
+      sprintHse3Lim20162 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Lim20162 += 1; 
     }
@@ -804,7 +805,7 @@ console.log(scoreJediLim20162);/* para la data */
 
 var studentsLim20171UP = 0;
 var studentsLim20171Down = 0;
-for (var i = 0; i < data.LIM['2017-1'].students.length ; i++ ) {
+for (var i = 0; i < data.LIM['2017-1'].students.length ; i++) {
   var studentsTotal = data.LIM['2017-1'].students[i].active;
   if (studentsTotal === true) {
     studentsLim20171UP += 1;
@@ -913,7 +914,7 @@ for (var i = 0; i < data.LIM['2017-1'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Lim20171 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Lim20171 +=1;
+      sprintHse3Lim20171 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Lim20171 += 1; 
     }
@@ -1072,7 +1073,7 @@ for (var i = 0; i < data.LIM['2017-2'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Lim20172 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Lim20172 +=1;
+      sprintHse3Lim20172 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Lim20172 += 1; 
     }
@@ -1122,7 +1123,7 @@ console.log(scoreJediLim20172);/* para la data */
 
 var studentsScl20162UP = 0;
 var studentsScl20162Down = 0;
-for (var i = 0; i < data.SCL['2016-2'].students.length ; i++ ) {
+for (var i = 0; i < data.SCL['2016-2'].students.length ; i++) {
   var studentsTotal = data.SCL['2016-2'].students[i].active;
   if (studentsTotal === true) {
     studentsScl20162UP += 1;
@@ -1146,7 +1147,7 @@ var stuContar = 0;
 for (var i = 0; i < data.SCL['2016-2'].students.length ; i++) {
   for (var j = 0; j < data.SCL['2016-2'].students[i].sprints.length ; j++) {
     var stuScoreHse = data.SCL['2016-2'].students[i].sprints[j].score.hse;
-    var stuScoreTech =data.SCL['2016-2'].students[i].sprints[j].score.tech;
+    var stuScoreTech = data.SCL['2016-2'].students[i].sprints[j].score.tech;
     SumScoreSprintHseScl20162 += stuScoreHse;
     SumScoreSprintTechScl20162 += stuScoreTech;
   } if (SumScoreSprintHseScl20162 >= 3360 && SumScoreSprintTechScl20162 >= 5040) {
@@ -1231,7 +1232,7 @@ for (var i = 0; i < data.SCL['2016-2'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Scl20162 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Scl20162 +=1;
+      sprintHse3Scl20162 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Scl20162 += 1; 
     }
@@ -1391,7 +1392,7 @@ for (var i = 0; i < data.SCL['2017-1'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Scl20171 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Scl20171 +=1;
+      sprintHse3Scl20171 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Scl20171 += 1; 
     }
@@ -1462,7 +1463,7 @@ console.log(detractorsScl20172);/* para la data */
 var SumScoreSprintHseScl20172 = 0;
 var SumScoreSprintTechScl20172 = 0;
 var stuContar = 0;
-console.log(data.SCL['2017-2'].students[0].sprints)
+console.log(data.SCL['2017-2'].students[0].sprints);
 
 for (var i = 0; i < data.SCL['2017-2'].students.length ; i++) {
   for (var j = 0; j < data.SCL['2017-2'].students[i].sprints.length ; j++) {
@@ -1552,7 +1553,7 @@ for (var i = 0; i < data.SCL['2017-2'].students.length ; i++) {
     } else if (sprintNumber == 2 && stuScoreHse >= 840) {
       sprintHse2Scl20172 += 1;
     } else if (sprintNumber == 3 && stuScoreHse >= 840) {
-      sprintHse3Scl20172 +=1;
+      sprintHse3Scl20172 += 1;
     } else if (sprintNumber == 4 && stuScoreHse >= 840) {
       sprintHse4Scl20172 += 1; 
     }
